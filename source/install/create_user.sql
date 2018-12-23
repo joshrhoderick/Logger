@@ -35,13 +35,13 @@ accept TEMP_TABLESPACE char default &TEMP_TABLESPACE prompt 'Temporary Tablespac
 
 accept PASSWD CHAR prompt 'Enter a password for the logger schema              [] :' HIDE
 
-create user &LOGGER_USER identified by &PASSWD default tablespace &LOGGER_TABLESPACE temporary tablespace &TEMP_TABLESPACE
+create user &LOGGER_USER identified by "&PASSWD" default tablespace &LOGGER_TABLESPACE temporary tablespace &TEMP_TABLESPACE
 /
 
-alter user &LOGGER_USER quota unlimited on &LOGGER_TABLESPACE 
+alter user &LOGGER_USER quota unlimited on &LOGGER_TABLESPACE
 /
 
-grant connect,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &LOGGER_USER 
+grant connect,create view, create job, create table, create sequence, create trigger, create procedure, create any context to &LOGGER_USER
 /
 
 prompt
